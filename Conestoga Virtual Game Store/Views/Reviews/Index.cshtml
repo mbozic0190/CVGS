@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.review>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.game_platforms.game_platform_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.employee_flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user1.employee_flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.review_text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.validated_flag)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.game_platforms.game_platform_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user.employee_flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user1.employee_flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.review_text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.validated_flag)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.review_id }) |
+            @Html.ActionLink("Accept", "Accept", new { id = item.review_id }) |
+            @Html.ActionLink("Deny", "Deny", new { id = item.review_id })
+        </td>
+    </tr>
+}
+
+</table>
