@@ -1,0 +1,66 @@
+﻿@model Conestoga_Virtual_Game_Store.Models.game
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.category_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.developer.developer_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.developer.developer_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.game_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.release_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.release_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.game_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

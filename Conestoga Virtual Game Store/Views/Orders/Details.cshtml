@@ -1,0 +1,34 @@
+﻿@model Conestoga_Virtual_Game_Store.Models.order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.user.employee_flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.employee_flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.order_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

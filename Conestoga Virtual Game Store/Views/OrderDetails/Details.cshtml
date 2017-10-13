@@ -1,0 +1,50 @@
+﻿@model Conestoga_Virtual_Game_Store.Models.order_details
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>order_details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.game_platforms.game_platform_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.game_platforms.game_platform_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.order.order_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order.order_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.physical_copy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.physical_copy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qty_ordered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qty_ordered)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.order_detail_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
