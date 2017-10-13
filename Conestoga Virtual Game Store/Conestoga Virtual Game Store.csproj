@@ -152,7 +152,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeDashboardController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\GameDetailsController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
+    <Compile Include="Controllers\GamesListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
@@ -252,6 +254,12 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Views\GameDetails\Create.cshtml" />
+    <Content Include="Views\GameDetails\Delete.cshtml" />
+    <Content Include="Views\GameDetails\Details.cshtml" />
+    <Content Include="Views\GameDetails\Edit.cshtml" />
+    <Content Include="Views\GameDetails\Index.cshtml" />
+    <Content Include="Views\GamesList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
