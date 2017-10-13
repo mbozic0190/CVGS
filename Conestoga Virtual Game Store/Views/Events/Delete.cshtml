@@ -1,0 +1,56 @@
+﻿@model Conestoga_Virtual_Game_Store.Models._event
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>_event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.user.employee_flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.employee_flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.event_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.event_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.event_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_description)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
