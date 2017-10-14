@@ -1,0 +1,28 @@
+﻿@model Conestoga_Virtual_Game_Store.Models.order_details
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@Html.HiddenFor(model => model.order_detail_id)
+<tr>
+    <td>
+        @Html.DisplayFor(model => model.game_platforms.game.game_name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.game_platforms.platform.platform_name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.physical_copy)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.qty_ordered)
+    </td>
+    <td>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.qty_ship, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.qty_ship, "", new { @class = "text-danger" })
+        </div>
+    </td>
+</tr>

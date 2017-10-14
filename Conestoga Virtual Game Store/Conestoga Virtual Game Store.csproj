@@ -260,6 +260,7 @@
     <Content Include="Views\GameDetails\Edit.cshtml" />
     <Content Include="Views\GameDetails\Index.cshtml" />
     <Content Include="Views\GamesList\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\OrderDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

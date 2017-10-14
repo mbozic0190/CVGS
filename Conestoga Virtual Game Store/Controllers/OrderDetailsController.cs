@@ -140,33 +140,30 @@ namespace Conestoga_Virtual_Game_Store.Controllers
             base.Dispose(disposing);
         }
 
-        [HttpPost, ActionName("CreateShipment")]
-        public ActionResult CreateShipment(IEnumerable<order_details> order_details)
+
+        public ActionResult CreateShipment(int id)
         {
-            if (ModelState.IsValid)
-            {
-                var tempShipment = new order_shipments();
-                var tempShipmentDetails = new order_shipment_details();
+            var order_details = (from od in db.order_details
+                                 where od.order_detail_id == id
+                                 select od).ToList();
 
-                tempShipment.order_id = order_details.First().order_id;
-                tempShipment.shipment_date = DateTime.Today;
-                tempShipment.shipped_by = 1;
+            var tempShipment = new order_shipments();
+            var tempShipmentDetails = new order_shipment_details();
+            tempShipment.order_id = order_details.First().order_id;
+            tempShipment.shipment_date = DateTime.Today;
+            tempShipment.shipped_by = 1;
 
-                db.order_shipments.Add(tempShipment);
-                db.SaveChanges();
+            db.order_shipments.Add(tempShipment);
+            db.SaveChanges();
 
-                int id = tempShipment.order_shipment_id;
+            int shipid = tempShipment.order_shipment_id;
+            tempShipmentDetails.order_shipment_id = shipid;
+            tempShipmentDetails.order_detail_id = order_details.First().order_detail_id;
+            tempShipmentDetails.qty_ship = order_details.First().qty_ordered;
 
-                foreach (var item in order_details)
-                {
-                    tempShipmentDetails.order_shipment_id = id;
-                    tempShipmentDetails.order_detail_id = item.order_detail_id;
-                    tempShipmentDetails.qty_ship = item.qty_ship;
+            db.order_shipment_details.Add(tempShipmentDetails);
+            db.SaveChanges();
 
-                    db.order_shipments.Add(tempShipment);
-                    db.SaveChanges();
-                }
-            }
             return RedirectToAction("Index","Orders",null);
         }
     }

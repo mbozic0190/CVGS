@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.order_details>bn
+﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.order_details>
 
 @{
     ViewBag.Title = "Index";
@@ -35,8 +35,6 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@using (Html.BeginForm("CreateShipment", "OrderDetails"))
-{
 <table class="table">
     <tr>
         <th>
@@ -70,16 +68,9 @@
             @Html.DisplayFor(modelItem => item.qty_ordered)
         </td>
         <td>
-            <div class="col-md-10">
-                @Html.EditorFor(modelItem => item.qty_ship, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(modelItem => item.qty_ship, "", new { @class = "text-danger" })
-            </div>
+            @Html.ActionLink("Ship", "CreateShipment", "OrderDetails", new { id = item.order_detail_id }, null)
         </td>
     </tr>
 }
 </table>
 
-<div class="col-md-offset-2 col-md-10">
-    <input type="submit" value="Ship" class="btn btn-default" />
-</div>
-}
