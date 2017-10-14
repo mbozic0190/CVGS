@@ -12,16 +12,24 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.user.employee_flag)
+            @Html.DisplayNameFor(model => model.order_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.display_name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.order_date)
         </th>
-        <th></th>
+        <th>
+
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_id)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.user.display_name)
         </td>
@@ -29,9 +37,7 @@
             @Html.DisplayFor(modelItem => item.order_date)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.order_id }) |
-            @Html.ActionLink("Details", "Index", "OrderDetails", new { id = item.order_id }, null) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.order_id })
+            @Html.ActionLink("Details", "Index", "OrderDetails", new { id = item.order_id }, null)
         </td>
     </tr>
 }

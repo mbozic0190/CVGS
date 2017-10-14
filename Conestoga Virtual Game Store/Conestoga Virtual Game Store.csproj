@@ -263,6 +263,8 @@
     <Content Include="Views\EventDetails\Details.cshtml" />
     <Content Include="Views\EventDetails\Index.cshtml" />
     <Content Include="Views\WishlistReport\Index.cshtml" />
+    <Content Include="Views\GamesList\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\OrderDetails.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

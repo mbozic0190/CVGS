@@ -17,13 +17,16 @@ namespace Conestoga_Virtual_Game_Store.Models
         [Key]
         public int order_detail_id { get; set; }
 
+        [Display(Name = "Order Number")]
         public int order_id { get; set; }
 
         public int game_platform_id { get; set; }
 
         [StringLength(1)]
+        [Display(Name = "Physical Copy")]
         public string physical_copy { get; set; }
 
+        [Display(Name = "Quiantity Ordered")]
         public int? qty_ordered { get; set; }
 
         public virtual game_platforms game_platforms { get; set; }

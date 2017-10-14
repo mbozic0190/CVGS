@@ -19,6 +19,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int platform_id { get; set; }
 
         [StringLength(30)]
+        [Display(Name = "Platform")]
         public string platform_name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -4,14 +4,13 @@
     ViewBag.Title = "Games Directory";
 }
 
-<h2>Index</h2>
+<h2>Games Directory</h2>
 
 <p>
     @Html.ActionLink("Add New Game", "Create")
 </p>
 @using (Html.BeginForm("Search", "Games"))
 {
-    @*@Html.TextBox("TextBoxName")*@
     <input id="SearchName" name="SearchName" type="text" value="" />
     <input type="submit" value="Create" />
 
@@ -19,28 +18,22 @@
 <table class="table">
     <tr>
         <th>
-            @*@Html.DisplayNameFor(model => model.game_name)*@
-            <h3>Title</h3>
+            <h3>@Html.DisplayNameFor(model => model.game_name)</h3>
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.category.category_name)*@
-            <h3>Category</h3>
+            <h3>@Html.DisplayNameFor(model => model.category.category_name)</h3>
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.developer.developer_name)*@
-            <h3>Developer</h3>
+            <h3>@Html.DisplayNameFor(model => model.developer.developer_name)</h3>
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.description)*@
-            <h3>Description</h3>
+            <h3>@Html.DisplayNameFor(model => model.description)</h3>
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.release_date)*@
-            <h3>Release Date</h3>
+            <h3>@Html.DisplayNameFor(model => model.release_date)</h3>
         </th>
         <th>
-            @*@Html.DisplayNameFor(model => model.price)*@
-            <h3>Price</h3>
+            <h3>@Html.DisplayNameFor(model => model.price)</h3>
         </th>
         <th></th>
     </tr>

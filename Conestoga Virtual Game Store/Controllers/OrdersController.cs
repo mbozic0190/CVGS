@@ -17,7 +17,16 @@ namespace Conestoga_Virtual_Game_Store.Controllers
         // GET: Orders
         public ActionResult Index()
         {
-            var orders = db.orders.Include(o => o.user);
+            List<int> physicalOrders = (from od in db.order_details
+                                        let qts = (from sod in db.order_shipment_details
+                                                   where sod.order_detail_id == od.order_detail_id
+                                                   select sod.qty_ship).Sum()
+                                        where (od.physical_copy.Equals("y") || od.physical_copy.Equals("Y"))
+                                        && od.qty_ordered > (qts ?? 0)
+                                        select od.order_id).Distinct().ToList();
+
+            var orders = db.orders.Include(o => o.user).Where(a=> physicalOrders.Contains(a.order_id));
+
             return View(orders.ToList());
         }
 
