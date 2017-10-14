@@ -16,10 +16,12 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int game_platform_id { get; set; }
 
         [Column(TypeName = "text")]
+        [Display(Name = "Review Text")]
         public string review_text { get; set; }
 
         [Required]
         [StringLength(1)]
+        [Display(Name = "Validated")]
         public string validated_flag { get; set; }
 
         public int? validated_by { get; set; }
