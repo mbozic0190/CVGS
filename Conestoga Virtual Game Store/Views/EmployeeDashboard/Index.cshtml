@@ -4,8 +4,8 @@
 }
 
 <h2>Employee Dashboard</h2>
-
-
-
+<a href="'@Url.Action("Index", "Reviews")'">@ViewBag.PendingReviews Review(s) Pending</a>
+<br>
+<a href="'@Url.Action("Index", "Orders")'">@ViewBag.PendingReviews Orders(s) Pending</a>
+<br>
 <button type="button" onclick="location.href='@Url.Action("Index", "Reports")'">Generate Reports</button>
-<button type="button" onclick="location.href='@Url.Action("Index", "Reviews")'">Reviews</button>

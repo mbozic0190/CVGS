@@ -25,36 +25,47 @@ namespace Conestoga_Virtual_Game_Store.Models
 
         [Required]
         [StringLength(1)]
+        [Display(Name = "Is Employee")]
         public string employee_flag { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Display Name")]
         public string display_name { get; set; }
 
         [StringLength(25)]
+        [Display(Name = "First Name")]
         public string first_name { get; set; }
 
         [StringLength(25)]
+        [Display(Name = "Last Name")]
         public string last_name { get; set; }
 
         [Column(TypeName = "date")]
+        [Display(Name = "Birthday")]
         public DateTime? birth_date { get; set; }
 
         [Required]
         [StringLength(50)]
+        [Display(Name = "Email")]
         public string email { get; set; }
 
         [Required]
         [StringLength(30)]
+        [Display(Name = "Password")]
         public string password { get; set; }
 
         [StringLength(1)]
+        [Display(Name = "Gender")]
         public string gender { get; set; }
 
         [StringLength(1)]
+        [Display(Name = "Recieve Promotional Emails")]
         public string promotional_emails { get; set; }
 
+        [Display(Name = "Favourite Category")]
         public int? category_id { get; set; }
 
+        [Display(Name = "Favourite Platform")]
         public int? platform_id { get; set; }
 
         public virtual category category { get; set; }

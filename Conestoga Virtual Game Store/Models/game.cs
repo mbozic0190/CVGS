@@ -19,17 +19,25 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int game_id { get; set; }
 
         [StringLength(50)]
+        [Required]
+        [Display(Name = "Game Name")]
         public string game_name { get; set; }
 
         [Column(TypeName = "text")]
+        [Required]
+        [Display(Name = "Game Description")]
         public string description { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [Display(Name = "Release Date")]
+        [Required]
         [Column(TypeName = "date")]
         public DateTime? release_date
         { get; set; }
 
         [Column(TypeName = "money")]
+        [Display(Name = "Price")]
+        [Required]
         public decimal price { get; set; }
 
         public int category_id { get; set; }

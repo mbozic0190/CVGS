@@ -1,7 +1,33 @@
-﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.order_details>
+﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.order_details>bn
 
 @{
     ViewBag.Title = "Index";
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/globalize.js"></script>
+    <script src="~/Scripts/globalize.culture.fr-FR.js"></script>
+    <script>
+        $.validator.methods.number = function (value, element) {
+            return this.optional(element) ||
+                !isNaN(Globalize.parseFloat(value));
+        }
+        $(document).ready(function () {
+            Globalize.culture('fr-FR');
+        });
+    </script>
+    <script>
+        jQuery.extend(jQuery.validator.methods, {
+            range: function (value, element, param) {
+                //Use the Globalization plugin to parse the value
+                var val = $.global.parseFloat(value);
+                return this.optional(element) || (
+                    val >= param[0] && val <= param[1]);
+            }
+        });
+
+    </script>
 }
 
 <h2>Index</h2>
@@ -9,13 +35,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm("CreateShipment", "OrderDetails"))
+{
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.game_platforms.game_platform_id)
+            @Html.DisplayNameFor(model => model.game_platforms.game.game_name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.order.order_id)
+            @Html.DisplayNameFor(model => model.game_platforms.platform.platform_name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.physical_copy)
@@ -23,16 +51,17 @@
         <th>
             @Html.DisplayNameFor(model => model.qty_ordered)
         </th>
-        <th></th>
+        <th>Quantity to Ship</th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.game_platforms.game_platform_id)
+            @Html.DisplayFor(modelItem => item.game_platforms.game.game_name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.order.order_id)
+            @Html.DisplayFor(modelItem => item.game_platforms.platform.platform_name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.physical_copy)
@@ -41,11 +70,16 @@
             @Html.DisplayFor(modelItem => item.qty_ordered)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.order_detail_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.order_detail_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.order_detail_id })
+            <div class="col-md-10">
+                @Html.EditorFor(modelItem => item.qty_ship, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(modelItem => item.qty_ship, "", new { @class = "text-danger" })
+            </div>
         </td>
     </tr>
 }
-
 </table>
+
+<div class="col-md-offset-2 col-md-10">
+    <input type="submit" value="Ship" class="btn btn-default" />
+</div>
+}

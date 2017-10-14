@@ -12,19 +12,25 @@ namespace Conestoga_Virtual_Game_Store.Models
         public order_details()
         {
             order_shipment_details = new HashSet<order_shipment_details>();
+            this.qty_ship = 0;
         }
 
         [Key]
         public int order_detail_id { get; set; }
 
+        [Display(Name = "Order Number")]
         public int order_id { get; set; }
 
         public int game_platform_id { get; set; }
 
         [StringLength(1)]
+        [Display(Name = "Physical Copy")]
         public string physical_copy { get; set; }
 
+        [Display(Name = "Quiantity Ordered")]
         public int? qty_ordered { get; set; }
+        
+        public int? qty_ship;
 
         public virtual game_platforms game_platforms { get; set; }
 

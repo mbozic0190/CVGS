@@ -16,12 +16,15 @@ namespace Conestoga_Virtual_Game_Store.Models
         }
 
         [Key]
+        [Display(Name = "Order Number")]
         public int order_id { get; set; }
 
+        [Display(Name = "Ordered By")]
         public int user_id { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Column(TypeName = "date")]
+        [Display(Name = "Order Date")]
         public DateTime? order_date { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
