@@ -151,6 +151,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeDashboardController.cs" />
+    <Compile Include="Controllers\EventDetailsController.cs" />
+    <Compile Include="Controllers\EventListController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\GameDetailsController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
@@ -161,6 +163,7 @@
     <Compile Include="Controllers\PlatformsController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
+    <Compile Include="Controllers\WishlistReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,7 +230,6 @@
     <Content Include="Views\Platforms\Details.cshtml" />
     <Content Include="Views\Platforms\Edit.cshtml" />
     <Content Include="Views\Platforms\Index.cshtml" />
-    <Content Include="Views\Games\Create.cshtml" />
     <Content Include="Views\Games\Delete.cshtml" />
     <Content Include="Views\Games\Details.cshtml" />
     <Content Include="Views\Games\Edit.cshtml" />
@@ -254,12 +256,13 @@
     <Content Include="Views\Reviews\Details.cshtml" />
     <Content Include="Views\Reviews\Edit.cshtml" />
     <Content Include="Views\Reviews\Index.cshtml" />
-    <Content Include="Views\GameDetails\Create.cshtml" />
-    <Content Include="Views\GameDetails\Delete.cshtml" />
-    <Content Include="Views\GameDetails\Details.cshtml" />
-    <Content Include="Views\GameDetails\Edit.cshtml" />
-    <Content Include="Views\GameDetails\Index.cshtml" />
     <Content Include="Views\GamesList\Index.cshtml" />
+    <Content Include="Views\GameDetails\Details.cshtml" />
+    <Content Include="Views\GameDetails\Index.cshtml" />
+    <Content Include="Views\EventList\Index.cshtml" />
+    <Content Include="Views\EventDetails\Details.cshtml" />
+    <Content Include="Views\EventDetails\Index.cshtml" />
+    <Content Include="Views\WishlistReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -4,39 +4,29 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Game Details Report</h2>
+<h2>Select a Game</h2>
 
 <p>
-    Select a Game:
-    @using (Html.BeginForm("Select", "GameDetails"))
-    { 
-    <div class="form-group">
-        <div class="col-md-10">
-            @Html.DropDownList("game_name", null, htmlAttributes: new { @id = "selectedGame", @class = "form-control" })
-            <input type="submit" value="Select" />
-        </div>
-    </div>
-    }
+@using (Html.BeginForm("Search", "GameDetails"))
+{
+    <input id="SearchGame" name="SearchGame" type="text" value="" />
+    <input type="submit" value="Search" />
+
+}
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.category.category_name)
+            <h3>Game Title</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.developer.developer_name)
+            <h3>Category</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.game_name)
+            <h3>Developer</h3>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.release_date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
+            <h3>Price</h3>
         </th>
         <th></th>
     </tr>
@@ -44,27 +34,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.game_name)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.category.category_name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.developer.developer_name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.game_name)
+            $@Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.release_date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.game_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.game_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.game_id })
+            @Html.ActionLink("Details", "Details", new { id=item.game_id })
         </td>
     </tr>
 }

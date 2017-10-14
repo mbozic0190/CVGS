@@ -13,17 +13,11 @@
             Game
         </th>
         <th>
-            Category Name
+            Category
         </th>
         <th>
-            Developer Name
+            Developer
         </th>
-        @*<th>
-            Description
-        </th>*@
-        @*<th>
-            Release Date
-        </th>*@
         <th>
             Price
         </th>
@@ -41,12 +35,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.developer.developer_name)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.releaseDate)
-        </td>*@
         <td>
             $@Html.DisplayFor(modelItem => item.price)
         </td>

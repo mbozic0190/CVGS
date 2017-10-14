@@ -1,0 +1,48 @@
+﻿@model Conestoga_Virtual_Game_Store.Models._event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 align="center">Game Detail Report</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Event Name:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_name)
+        </dd>
+
+        <dt>
+            Event Date:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_date)
+        </dd>
+
+        <dt>
+            About:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_description)
+        </dd>
+
+        <dt>
+            Hosted By:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.display_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
