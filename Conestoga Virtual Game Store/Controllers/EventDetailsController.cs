@@ -10,30 +10,30 @@ using Conestoga_Virtual_Game_Store.Models;
 
 namespace Conestoga_Virtual_Game_Store.Controllers
 {
-    public class GameDetailsController : Controller
+    public class EventDetailsController : Controller
     {
         private CVGSModel db = new CVGSModel();
 
-        // GET: GameDetails
+        // GET: EventDetails
         public ActionResult Index()
         {
-            var games = db.games.Include(g => g.category).Include(g => g.developer);
-            return View(games.ToList());
+            var events = db.events.Include(_ => _.user);
+            return View(events.ToList());
         }
 
-        // GET: GameDetails/Details/5
+        // GET: EventDetails/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            game game = db.games.Find(id);
-            if (game == null)
+            _event _event = db.events.Find(id);
+            if (_event == null)
             {
                 return HttpNotFound();
             }
-            return View(game);
+            return View(_event);
         }
 
         protected override void Dispose(bool disposing)
@@ -46,19 +46,19 @@ namespace Conestoga_Virtual_Game_Store.Controllers
         }
 
         [HttpPost, ActionName("Search")]
-        public ActionResult Search(string SearchGame)
+        public ActionResult Search(string SearchEvent)
         {
-            string criteria = SearchGame;
+            string criteria = SearchEvent;
 
             if (criteria != "")
             {
-                var searchGames = db.games.Where(a => a.game_name.Contains(criteria)).Include(g => g.category).Include(g => g.developer);
-                return View("index", searchGames.ToList());
+                var searchEvents = db.events.Where(a => a.event_name.Contains(criteria));
+                return View("index", searchEvents.ToList());
             }
             else
             {
-                var games = db.games.Include(g => g.category).Include(g => g.developer);
-                return View("index", games.ToList());
+                var events = db.events;
+                return View("index", events.ToList());
             }
 
         }
