@@ -178,9 +178,13 @@
     <Compile Include="Models\order_details.cs" />
     <Compile Include="Models\order_shipments.cs" />
     <Compile Include="Models\order_shipment_details.cs" />
+    <Compile Include="Models\payment_type.cs" />
+    <Compile Include="Models\payment_types.cs" />
     <Compile Include="Models\platform.cs" />
     <Compile Include="Models\review.cs" />
     <Compile Include="Models\user.cs" />
+    <Compile Include="Models\user_payment_info.cs" />
+    <Compile Include="Models\user_shipment_info.cs" />
     <Compile Include="Models\wishlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
