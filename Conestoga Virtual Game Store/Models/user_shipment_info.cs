@@ -42,7 +42,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         public string first_name { get; set; }
 
         [StringLength(25)]
-        [Display(Name = "Last =Name")]
+        [Display(Name = "Last Name")]
         public string last_name { get; set; }
     }
 }

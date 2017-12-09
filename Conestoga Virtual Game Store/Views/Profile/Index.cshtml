@@ -61,8 +61,8 @@
         </td>
         <td>
             <h4>@Html.ActionLink("Edit Profile", "Edit", new { id = item.user_id })</h4>
-            @*@Html.ActionLink("Details", "Details", new { id=item.user_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.user_id })*@
+            <h4>@Html.ActionLink("Edit Payments", "Index", "PaymentInfo")</h4>
+            <h4>@Html.ActionLink("Edit Shipping", "Index", "ShippingInfo")</h4>
         </td>
     </tr>
 }
