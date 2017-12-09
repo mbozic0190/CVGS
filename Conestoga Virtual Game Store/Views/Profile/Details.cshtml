@@ -1,0 +1,106 @@
+﻿@model Conestoga_Virtual_Game_Store.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>user</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.category.category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.category_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.platform.platform_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.platform.platform_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employee_flag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employee_flag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.display_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.display_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.birth_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.birth_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.promotional_emails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.promotional_emails)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

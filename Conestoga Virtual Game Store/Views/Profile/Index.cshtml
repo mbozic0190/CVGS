@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.user>
+
+@{
+    ViewBag.Title = "User Profile";
+}
+
+<h2>View Profile</h2>
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.display_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.birth_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            Preferred Category
+        </th>
+        <th>
+            Preferred @Html.DisplayNameFor(model => model.platform.platform_name)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <hr />  
+            <h4><b>Username:</b> @Html.DisplayFor(modelItem => item.display_name)</h4>
+            <br />
+        </td>
+        <td>
+            <h4><b>Full Name:</b> @Html.DisplayFor(modelItem => item.first_name) @Html.DisplayFor(modelItem => item.last_name)</h4>
+            <br />
+        </td>
+        <td>
+            <h4><b>Birthday:</b> @Html.DisplayFor(modelItem => item.birth_date)</h4>
+            <br />
+        </td>
+        <td>
+            <h4><b>Gender:</b> @Html.DisplayFor(modelItem => item.gender)</h4>
+            <br />
+        </td>
+        <td>
+            <h4><b>Preferred Category:</b> @Html.DisplayFor(modelItem => item.category.category_name)</h4>
+            <br />
+        </td>
+        <td>
+            <h4><b>Preferred Platform:</b> @Html.DisplayFor(modelItem => item.platform.platform_name)</h4>
+            <br />
+        </td>
+        <td>
+            <h4>@Html.ActionLink("Edit Profile", "Edit", new { id = item.user_id })</h4>
+            @*@Html.ActionLink("Details", "Details", new { id=item.user_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.user_id })*@
+        </td>
+    </tr>
+}
+
+@*</table>*@
