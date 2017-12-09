@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Conestoga_Virtual_Game_Store.Models.user>
 
 @{
-    ViewBag.Title = "User Profile";
+    ViewBag.Title = @TempData.Peek("display_name").ToString() + "'s Profile";
 }
 
-<h2>View Profile</h2>
+<h2>@TempData.Peek("display_name").ToString()'s Profile</h2>
 
 @*<table class="table">
     <tr>

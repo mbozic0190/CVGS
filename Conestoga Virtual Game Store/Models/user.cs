@@ -28,18 +28,22 @@ namespace Conestoga_Virtual_Game_Store.Models
         [Display(Name = "Is Employee")]
         public string employee_flag { get; set; }
 
+        [Required]
         [StringLength(50)]
         [Display(Name = "Display Name")]
         public string display_name { get; set; }
 
+        [Required]
         [StringLength(25)]
         [Display(Name = "First Name")]
         public string first_name { get; set; }
 
+        [Required]
         [StringLength(25)]
         [Display(Name = "Last Name")]
         public string last_name { get; set; }
 
+        [Required]
         [Column(TypeName = "date")]
         [Display(Name = "Birthday")]
         public DateTime? birth_date { get; set; }
@@ -58,6 +62,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         [Display(Name = "Gender")]
         public string gender { get; set; }
 
+        [Required]
         [StringLength(1)]
         [Display(Name = "Recieve Promotional Emails")]
         public string promotional_emails { get; set; }

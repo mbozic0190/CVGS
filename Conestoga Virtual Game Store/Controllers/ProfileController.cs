@@ -17,8 +17,13 @@ namespace Conestoga_Virtual_Game_Store.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            var users = db.users.Include(u => u.category).Include(u => u.platform);
-            return View(users.ToList());
+            int user_id = Int32.Parse(TempData.Peek("user_id").ToString());
+
+            var getUser = db.users.Where(r => r.user_id == user_id);
+            return View(getUser.ToList());
+
+            //var users = db.users.Include(u => u.category).Include(u => u.platform);
+            //return View(users.ToList());
         }
 
         // GET: Profile/Details/5
