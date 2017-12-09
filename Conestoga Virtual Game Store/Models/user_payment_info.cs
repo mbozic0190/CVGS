@@ -16,7 +16,8 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int payment_type_id { get; set; }
 
         [Display(Name = "Card Number")]
-        public int? card_number { get; set; }
+        [StringLength(30)]
+        public string card_number { get; set; }
 
         [StringLength(50)]
         [Display(Name = "Address 1")]
@@ -49,5 +50,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         [StringLength(25)]
         [Display(Name = "Last Name")]
         public string last_name { get; set; }
+
+        public virtual payment_types payment_types { get; set; }
     }
 }

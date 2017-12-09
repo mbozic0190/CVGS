@@ -208,5 +208,9 @@ namespace Conestoga_Virtual_Game_Store.Models
                 .WithRequired(e => e.user)
                 .WillCascadeOnDelete(false);
         }
+
+        public System.Data.Entity.DbSet<Conestoga_Virtual_Game_Store.Models.payment_types> payment_types { get; set; }
+
+        public System.Data.Entity.DbSet<Conestoga_Virtual_Game_Store.Models.user_payment_info> user_payment_info { get; set; }
     }
 }

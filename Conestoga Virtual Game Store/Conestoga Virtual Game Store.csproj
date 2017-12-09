@@ -161,6 +161,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrderDetailsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\PaymentInfoController.cs" />
     <Compile Include="Controllers\PlatformsController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ReportsController.cs" />
@@ -271,6 +272,10 @@
     <Content Include="Views\EventDetails\Index.cshtml" />
     <Content Include="Views\WishlistReport\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\OrderDetails.cshtml" />
+    <Content Include="Views\PaymentInfo\Create.cshtml" />
+    <Content Include="Views\PaymentInfo\Delete.cshtml" />
+    <Content Include="Views\PaymentInfo\Edit.cshtml" />
+    <Content Include="Views\PaymentInfo\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Profile\Create.cshtml" />
     <Content Include="Views\Profile\Delete.cshtml" />
