@@ -18,6 +18,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int developer_id { get; set; }
 
         [StringLength(30)]
+        [Display(Name = "Developer Name")]
         public string developer_name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

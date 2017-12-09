@@ -15,7 +15,7 @@ namespace Conestoga_Virtual_Game_Store.Models
 
         public int user_id { get; set; }
 
-        [Column(TypeName = "date")]
+        [Column(TypeName = "Date")]
         public DateTime? registration_date { get; set; }
 
         public virtual _event _event { get; set; }

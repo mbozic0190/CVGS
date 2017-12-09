@@ -12,6 +12,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int payment_type_id { get; set; }
 
         [StringLength(50)]
+        [Display(Name = "Payment Type")]
         public string payment_type_description { get; set; }
     }
 }

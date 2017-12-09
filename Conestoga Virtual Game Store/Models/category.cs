@@ -19,6 +19,7 @@ namespace Conestoga_Virtual_Game_Store.Models
         public int category_id { get; set; }
 
         [StringLength(30)]
+        [Display(Name = "Category Name")]
         public string category_name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
