@@ -167,6 +167,7 @@
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\ShippingInfoController.cs" />
+    <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\WishlistReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,6 +286,7 @@
     <Content Include="Views\ShippingInfo\Delete.cshtml" />
     <Content Include="Views\ShippingInfo\Edit.cshtml" />
     <Content Include="Views\ShippingInfo\Index.cshtml" />
+    <Content Include="Views\SignUp\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
