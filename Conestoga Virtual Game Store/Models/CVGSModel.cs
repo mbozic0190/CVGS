@@ -214,5 +214,9 @@ namespace Conestoga_Virtual_Game_Store.Models
         public System.Data.Entity.DbSet<Conestoga_Virtual_Game_Store.Models.user_payment_info> user_payment_info { get; set; }
 
         public System.Data.Entity.DbSet<Conestoga_Virtual_Game_Store.Models.user_shipment_info> user_shipment_info { get; set; }
+
+        public System.Data.Entity.DbSet<Conestoga_Virtual_Game_Store.Models.shopping_cart> shopping_cart { get; set; }
+
+        public System.Data.Entity.DbSet<Conestoga_Virtual_Game_Store.Models.game_collection> game_collection { get; set; }
     }
 }

@@ -18,16 +18,7 @@
             @Html.DisplayNameFor(model => model.game_platforms.platform.platform_name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.user.employee_flag)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.user1.employee_flag)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.review_text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.validated_flag)
         </th>
         <th></th>
     </tr>
@@ -41,16 +32,7 @@
             @Html.DisplayFor(modelItem => item.game_platforms.platform.platform_name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.user.employee_flag)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.user1.employee_flag)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.review_text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.validated_flag)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.review_id }) |

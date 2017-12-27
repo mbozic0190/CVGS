@@ -154,6 +154,7 @@
     <Compile Include="Controllers\EventDetailsController.cs" />
     <Compile Include="Controllers\EventListController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\GameCollectionController.cs" />
     <Compile Include="Controllers\GameDetailsController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\GamesListController.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\ShippingInfoController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Controllers\WishlistReportController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,6 +180,7 @@
     <Compile Include="Models\event.cs" />
     <Compile Include="Models\event_registration.cs" />
     <Compile Include="Models\game.cs" />
+    <Compile Include="Models\game_collection.cs" />
     <Compile Include="Models\game_platforms.cs" />
     <Compile Include="Models\order.cs" />
     <Compile Include="Models\order_details.cs" />
@@ -186,6 +189,7 @@
     <Compile Include="Models\payment_types.cs" />
     <Compile Include="Models\platform.cs" />
     <Compile Include="Models\review.cs" />
+    <Compile Include="Models\shopping_cart.cs" />
     <Compile Include="Models\user.cs" />
     <Compile Include="Models\user_payment_info.cs" />
     <Compile Include="Models\user_shipment_info.cs" />
@@ -287,6 +291,16 @@
     <Content Include="Views\ShippingInfo\Edit.cshtml" />
     <Content Include="Views\ShippingInfo\Index.cshtml" />
     <Content Include="Views\SignUp\Create.cshtml" />
+    <Content Include="Views\ShoppingCart\Create.cshtml" />
+    <Content Include="Views\ShoppingCart\Delete.cshtml" />
+    <Content Include="Views\ShoppingCart\Details.cshtml" />
+    <Content Include="Views\ShoppingCart\Edit.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\GameCollection\Create.cshtml" />
+    <Content Include="Views\GameCollection\Delete.cshtml" />
+    <Content Include="Views\GameCollection\Details.cshtml" />
+    <Content Include="Views\GameCollection\Edit.cshtml" />
+    <Content Include="Views\GameCollection\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
